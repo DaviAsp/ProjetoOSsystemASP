@@ -12,6 +12,19 @@
         android:gravity="center_vertical"
         android:orientation="vertical">
 
+        <EditText
+            android:id="@+id/edNrOS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="80dp"
+            android:ems="10"
+            android:hint="Informe o Nr da OS"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textSize="14sp" />
+
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
