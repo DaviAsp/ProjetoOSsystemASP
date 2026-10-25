@@ -38,6 +38,17 @@
             android:layout_height="wrap_content" />
 
         <EditText
+            android:id="@+id/edNrSerie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:ems="10"
+            android:hint="Informe nr de serie"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textSize="14sp" />
+
+        <EditText
             android:id="@+id/edDefeito"
             android:layout_width="match_parent"
             android:layout_height="116dp"
@@ -48,6 +59,25 @@
             android:inputType="textMultiLine"
             android:textAlignment="center"
             android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/edSolucao"
+            android:layout_width="match_parent"
+            android:layout_height="116dp"
+            android:layout_margin="20dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Descreva a solução aplicada"
+            android:inputType="textMultiLine"
+            android:textAlignment="center"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnGravar"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:text="Finalizar Chamado"
+            android:textSize="20sp" />
 
     </LinearLayout>
 </FrameLayout>
