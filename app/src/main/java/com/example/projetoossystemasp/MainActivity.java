@@ -1,6 +1,7 @@
 package com.example.projetoossystemasp;
 
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
@@ -45,11 +46,16 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.add(R.id.frameLayout,new HomeFragment());
         fragmentTransaction.commit();
 
-//        btHome.setOnClickListener(e->{trocarFragment(homeFragment);});
-//        btChamados.setOnClickListener(e->{trocarFragment(chamadosFragment);});
-//        btContato.setOnClickListener(e->{trocarFragment(contatoFragment);});
+        btHome.setOnClickListener(e->{trocarFragment(homeFragment);});
+        btChamados.setOnClickListener(e->{trocarFragment(chamadosFragment);});
+        btContato.setOnClickListener(e->{trocarFragment(contatoFragment);});
+
+    }
 
 
-
+    private void trocarFragment(Fragment novoFragment) {
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frameLayout,novoFragment);
+        fragmentTransaction.commit();
     }
 }
