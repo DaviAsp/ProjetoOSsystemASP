@@ -20,7 +20,7 @@
             android:text="Marca" />
 
         <Spinner
-            android:id="@+id/spinner"
+            android:id="@+id/spMarca"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center" />
@@ -31,5 +31,23 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Modelo" />
+
+        <Spinner
+            android:id="@+id/spModelo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edDefeito"
+            android:layout_width="match_parent"
+            android:layout_height="116dp"
+            android:layout_margin="20dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Descreva o defeito do dispositivo"
+            android:inputType="textMultiLine"
+            android:textAlignment="center"
+            android:textSize="14sp" />
+
     </LinearLayout>
 </FrameLayout>
