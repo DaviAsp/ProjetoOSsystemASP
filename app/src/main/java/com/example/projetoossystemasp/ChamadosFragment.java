@@ -7,6 +7,16 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.Spinner;
+
+import com.example.projetoossystemasp.models.OrdemServico;
+import com.example.projetoossystemasp.models.Singleton;
+
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +31,17 @@ public class ChamadosFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     // TODO: Rename and change types of parameters
+
+    private EditText edtNrOS;
+
+    private Spinner spMarca;
+
+    private  Spinner spModelo;
+
+    private  EditText edDefeito;
+    private  EditText edNrSerie;
+
+    private  EditText edSolucao;
     private String mParam1;
     private String mParam2;
 
@@ -28,15 +49,7 @@ public class ChamadosFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ChamadosFragment.
-     */
-    // TODO: Rename and change types and number of parameters
+
     public static ChamadosFragment newInstance(String param1, String param2) {
         ChamadosFragment fragment = new ChamadosFragment();
         Bundle args = new Bundle();
@@ -58,7 +71,28 @@ public class ChamadosFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_chamados, container, false);
+         edtNrOS = view.findViewById(R.id.edNrOS);
+         spMarca = view.findViewById(R.id.spMarca);
+         spModelo = view.findViewById(R.id.spModelo);
+         edDefeito = view.findViewById(R.id.edDefeito);
+         edSolucao = view.findViewById(R.id.edSolucao);
+
+        FileInputStream fin  = null;
+        ObjectInputStream in;
+        try
+        {
+//            fin = openFileInput("medidas.dad");
+//            in = new ObjectInputStream(fin);
+            Singleton.listMedidas = (List<OrdemServico>) in.readObject();
+            in.close();
+        }
+        catch(Exception e){ Singleton.listMedidas = new ArrayList<>();
+            e.printStackTrace();}
+
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_chamados, container, false);
+        return view;
     }
 }

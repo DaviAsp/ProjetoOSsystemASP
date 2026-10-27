@@ -3,6 +3,8 @@ package com.example.projetoossystemasp;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     private Button btHome, btChamados, btContato;
     private Fragment homeFragment,chamadosFragment,contatoFragment;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         btHome=findViewById(R.id.btHome);
         btChamados=findViewById(R.id.btChamados);
         btContato=findViewById(R.id.btContato);
+
+
 
         // instanciar os fragmentos
         homeFragment=new HomeFragment();
