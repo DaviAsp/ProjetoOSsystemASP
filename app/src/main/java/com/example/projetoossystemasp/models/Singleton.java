@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Singleton {
 
-    public static List<OrdemServico> listMedidas = null;
+    public static List<OrdemServico> listOSs = null;
 
     public Singleton() {
     }
