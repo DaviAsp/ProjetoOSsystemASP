@@ -7,6 +7,8 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -42,6 +44,11 @@ public class ChamadosFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     // TODO: Rename and change types of parameters
+
+    private FragmentManager fragmentManager;
+    private FragmentTransaction fragmentTransaction;
+
+    private Fragment homeFragment,contatoFragment;
 
     private EditText edtNrOS;
 
@@ -175,7 +182,9 @@ public class ChamadosFragment extends Fragment {
         else {
             if(item.getItemId() == R.id.itHistorico){
 
-                Intent intent = new Intent(this,ListarHistorico.class);
+                Intent intent;
+
+                intent = new Intent(this,ListarHistorico.class);
                 startActivity(intent);
             }
             else{
