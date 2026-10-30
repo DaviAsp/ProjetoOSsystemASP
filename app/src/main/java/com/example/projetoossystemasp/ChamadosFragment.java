@@ -16,6 +16,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -28,6 +29,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -65,6 +67,8 @@ public class ChamadosFragment extends Fragment {
 
     private Button btnGravar;
 
+
+
     private  OrdemServico os = null;
 
     public ChamadosFragment() {
@@ -84,10 +88,10 @@ public class ChamadosFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
+
+
+
     }
 
     @Override
@@ -101,6 +105,23 @@ public class ChamadosFragment extends Fragment {
          edDefeito = view.findViewById(R.id.edDefeito);
          edSolucao = view.findViewById(R.id.edSolucao);
          btnGravar = view.findViewById(R.id.btnGravar);
+
+
+
+        List<String> marcas = new ArrayList();
+        marcas.addAll(Arrays.asList("Positivo","Multilaser","Lenovo"));
+
+        ArrayAdapter<String> adapter2 = new
+                ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,marcas);
+        spMarca.setAdapter(adapter2);
+
+
+        List<String> modelos = new ArrayList();
+        modelos.addAll(Arrays.asList("N1110","D570","T2040"));
+
+        ArrayAdapter<String> adapter3 = new
+                ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,modelos);
+        spModelo.setAdapter(adapter2);
 
         FileInputStream fin  = null;
         ObjectInputStream in;
@@ -184,11 +205,11 @@ public class ChamadosFragment extends Fragment {
 
                 Intent intent;
 
-                intent = new Intent(this,ListarHistorico.class);
+                intent = new Intent(getActivity(),ListarHistorico.class);
                 startActivity(intent);
             }
             else{
-                finish();
+                getActivity().finish();
             }
 
         }
