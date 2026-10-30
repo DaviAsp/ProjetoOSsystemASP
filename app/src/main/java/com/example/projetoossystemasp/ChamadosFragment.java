@@ -121,7 +121,7 @@ public class ChamadosFragment extends Fragment {
 
         ArrayAdapter<String> adapter3 = new
                 ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,modelos);
-        spModelo.setAdapter(adapter2);
+        spModelo.setAdapter(adapter3);
 
         FileInputStream fin  = null;
         ObjectInputStream in;

@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="80dp"
+            android:layout_marginBottom="50dp"
             android:ems="10"
             android:hint="Informe o Nr da OS"
             android:inputType="text"
@@ -64,7 +64,7 @@
         <EditText
             android:id="@+id/edDefeito"
             android:layout_width="match_parent"
-            android:layout_height="116dp"
+            android:layout_height="40dp"
             android:layout_margin="20dp"
             android:ems="10"
             android:gravity="start|top"
@@ -76,7 +76,7 @@
         <EditText
             android:id="@+id/edSolucao"
             android:layout_width="match_parent"
-            android:layout_height="116dp"
+            android:layout_height="40dp"
             android:layout_margin="20dp"
             android:ems="10"
             android:gravity="start|top"
