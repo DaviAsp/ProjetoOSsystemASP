@@ -182,37 +182,8 @@ public class ChamadosFragment extends Fragment {
 
     }
 
-    @SuppressLint("RestrictedApi")
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        MenuInflater inflater = getActivity().getMenuInflater();
-        inflater.inflate(R.menu.menu_principal, menu);
 
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId()==R.id.itLimpaCampos)
-        {
-            edtNrOS.setText("");
-            edDefeito.setText("");
-            edNrSerie.setText("");
-            edSolucao.setText("");
-        }
-        else {
-            if(item.getItemId() == R.id.itHistorico){
 
-                Intent intent;
 
-                intent = new Intent(getActivity(),ListarHistorico.class);
-                startActivity(intent);
-            }
-            else{
-                getActivity().finish();
-            }
-
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }

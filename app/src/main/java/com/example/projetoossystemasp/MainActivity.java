@@ -1,12 +1,18 @@
 package com.example.projetoossystemasp;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -24,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         btHome=findViewById(R.id.btHome);
         btChamados=findViewById(R.id.btChamados);
         btContato=findViewById(R.id.btContato);
+
+
 
 
 
@@ -64,4 +73,34 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.frameLayout,novoFragment);
         fragmentTransaction.commit();
     }
+
+    @SuppressLint("RestrictedApi")
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_principal, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+            if(item.getItemId() == R.id.itHistorico){
+
+                Intent intent;
+
+                intent = new Intent(this,ListarHistorico.class);
+                startActivity(intent);
+            }
+            else{
+                finish();
+            }
+
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
 }
