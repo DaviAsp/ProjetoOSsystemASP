@@ -25,7 +25,7 @@ public class ListarHistorico extends AppCompatActivity {
         setContentView(R.layout.activity_listarhistorico);
         listView=findViewById(R.id.listView);
         // retirar o ActionBar
-        getSupportActionBar().hide();
+      //  getSupportActionBar().hide();
 
 
         OrdemServicosAdapter adapter=new OrdemServicosAdapter(this,
